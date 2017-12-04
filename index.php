@@ -160,7 +160,7 @@ $(document).ready(function() {
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 1.0
+      <b>Version</b> 1.1 Beta
     </div>
     <strong>Sistem Informasi Manajemen Proyek </strong>PT Hegar Daya
   </footer>
