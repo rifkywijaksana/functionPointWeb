@@ -24,8 +24,16 @@ $pemisah_ribuan =".";
   <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="js/datepicker.css">
-  <script src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" language="javascript" src="js/jquery-1.12.4.js">  </script>
+    <link rel="stylesheet" type="text/css" href="js/bootstrap-datetimepicker.css">
+    <script type="text/javascript" language="javascript" src="js/bootstrap-datetimepicker.js">  </script>
+    <link rel="stylesheet" type="text/css" href="js/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="js/dataTables.bootstrap.min.css">    
+    
+    <script type="text/javascript" language="javascript" src="js/jquery.dataTables.min.js">  </script>
+    <script type="text/javascript" language="javascript" src="js/dataTables.bootstrap.min.js">  </script>
+    
+ 
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
@@ -34,32 +42,23 @@ $pemisah_ribuan =".";
   <!-- jvectormap -->
   <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
   <!-- Date Picker -->
-  <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  
   <!-- Daterange picker -->
   <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <script type="text/javascript" src="js/jsFunction.js"></script>
-   <script type="text/javascript" src="js/bootstrap-confirmation.min.js"></script>
-  
-   <script type="text/javascript">
-            $(function(){
-             $('.datepicker').datepicker();
-            });
-            $(function() {
-        $( "#datepicker" ).datepicker({
-            changeMonth: true,
-            changeYear: true
-        });
-    });
-  </script>
-  <script src="jquery.PrintArea.js"></script>
+ 
     <link rel="stylesheet" href="themes/base/jquery.ui.all.css">
-    <script src="js/jquery-1.7.2.js"></script>
-    <script src="ui/jquery.ui.core.js"></script>
-    <script src="ui/jquery.ui.widget.js"></script>
-    <script src="ui/jquery.ui.datepicker.js"></script>
 
+  
+    <script type="text/javascript" class="init">
+  
+$(document).ready(function() {
+  $('#example').DataTable();
+} );
+
+  </script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -173,8 +172,6 @@ $pemisah_ribuan =".";
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->

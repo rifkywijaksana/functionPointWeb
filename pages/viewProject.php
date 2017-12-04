@@ -12,12 +12,14 @@
     <section class="content">
     <div class="table-responsive">
     <form name="detailProject" method="POST">
-    <table class="table table-bordered" style="background-color: white!important;">
+    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
       <thead class="header">
       <tr>
         <th rowspan="2" valign="middle">No</th>
-        <th rowspan="2" valign="middle">ID Project</th>
-        <th rowspan="2" valign="middle">Judul Project</th>
+        <th rowspan="2" valign="middle">ID</th>
+        <th rowspan="2" valign="middle" width="200px">Judul</th>
+        <th rowspan="2" valign="middle">Jadwal</th>
+        <th rowspan="2" valign="middle">%</th>
         <th valign="middle" colspan="2">Function Point</th>
         <th rowspan="2" valign="middle">EVM</th>
         <th rowspan="2" valign="middle">Action</th>
@@ -33,15 +35,20 @@
       $query = " SELECT * FROM t_descproject ";
       $getData = mysqli_query($connection,$query) or die(mysqli_error($connection));
       while ($row = mysqli_fetch_array($getData))
-      {
+      { 
 
+        $sql = "SELECT SUM(IF(STATUS='done',1,0))/COUNT(*) persentase FROM t_jadwalproject WHERE idProject='$row[idProject]'";
+        $getData2 = mysqli_query($connection,$sql) or die(mysqli_error($connection));
+        $rows = mysqli_fetch_array($getData2);
         ?>
           <tr>
             <td align="center" valign="middle"><?=$no?></td>
             <td align="center"><?=$row['idProject']?></td>
             <td><?=$row['judulProject']?></td>
+             <td align="center"><a href="?id=<?php echo urlencode(base64_encode(13)); ?>&idProject=<?php echo urlencode(base64_encode($row['idProject']));?>&judulProject=<?php echo urlencode(base64_encode($row['judulProject']));?>" class="btn btn-info" role="button"><i class="glyphicon glyphicon-eye-open"></i> View</a></td>
+             <td align="center"><strong><?=number_format($rows['persentase']*100, $jumlah_desimal, $pemisah_desimal, $pemisah_ribuan);?>%</strong></td>
             <td align="center"><strong><?=number_format($row['functionPoint'], $jumlah_desimal, $pemisah_desimal, $pemisah_ribuan);?></strong></td>
-            <td align="center">
+            <td align="center"> 
             <?php
               if ($row['functionPoint']==0)
               {

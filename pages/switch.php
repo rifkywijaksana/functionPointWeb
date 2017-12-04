@@ -35,5 +35,18 @@
 	case 11 :
 	include "pages/viewDetailProject.php";
 	break;
+	case 13 :
+	include "pages/viewJadwalProject.php";
+	break;
+	case 14 :
+	include "pages/inputJadwalProject.php";
+	break;
+	case 15 :
+	include "pages/editJadwalProject.php";
+	break;
+
+	case 16 :
+	include "pages/editEvm.php";
+	break;
 }
 ?>
